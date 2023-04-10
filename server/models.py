@@ -6,11 +6,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 load_dotenv()
 
-DATABASE_URL=os.environ.get('DATABASE_URL') or 'mongodb://localhost:27017/?retryWrites=true&serverSelectionTimeoutMS=5000&connectTimeoutMS=10000'
-client = MongoClient(DATABASE_URL)
-MONGODB_DATABASE =os.getenv('MONGODB_DATABASE')
-print(MONGODB_DATABASE)
-db = client[MONGODB_DATABASE]
+MONGO_URI=os.environ.get('MONGO_URI') or 'mongodb://localhost:27017/?retryWrites=true&serverSelectionTimeoutMS=5000&connectTimeoutMS=10000'
+client = MongoClient(MONGO_URI)
+MONGO_DATABASE =os.getenv('MONGO_DATABASE')
+print(MONGO_DATABASE)
+db = client[MONGO_DATABASE]
 
 class Books:
     """Books Model"""

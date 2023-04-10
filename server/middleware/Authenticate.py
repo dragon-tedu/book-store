@@ -1,5 +1,5 @@
 from functools import wraps
-import jwt
+from server.extensions import jwt
 from flask import request, abort
 from flask import current_app
 import models
